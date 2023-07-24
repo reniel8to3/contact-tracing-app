@@ -17,4 +17,3 @@ def covid_gui():
     #symptoms status
     #contact person details
  
-    
