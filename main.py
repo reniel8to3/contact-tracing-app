@@ -1,5 +1,6 @@
 #import tkinter
 from tkinter import *
+from tkinter import ttk
 #create gui window
 covid_contact_tracing_app = Tk()
 covid_contact_tracing_app.title("COVID-19 CONTACT TRACING APP Version 1.0")
@@ -32,13 +33,16 @@ def covid_gui():
     userage = Label(covid_contact_tracing_app,text = "Age : ")
     userage.place(x=60, y=145)
     userage_entry = Entry(covid_contact_tracing_app)
-    userage_entry.place(width=40, x=105, y=145)
-    #user's birthday
-    userbday = Label(covid_contact_tracing_app,text = "Birthday : ")
-    userbday.place(x=200, y=145)
-    from tkcalendar import Calendar
-    calendar = Calendar(covid_contact_tracing_app, selectmode = 'day', year = 2023, month = 7, day = 18)
-    calendar.place(x = 290, y = 145)
+    userage_entry.place(width=60, x=105, y=145)
+    #user's gender
+    usergender = Label(covid_contact_tracing_app,text = "Gender : ")
+    usergender.place(x=275, y=145)
+    usergender_entry=Entry(covid_contact_tracing_app,text = "Gender :")
+    usergender_entry.place = ttk.Combobox(values=["Male", "Female", "Prefer not to say"])
+    usernumber=Label(covid_contact_tracing_app, text = "Contact # : ")
+    usernumber.place(x=500, y=145)
+    usernumber_entry = Entry(covid_contact_tracing_app)
+    usernumber_entry.place(width=120, x=585, y=145)
 #make database
 
 
