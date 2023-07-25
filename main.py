@@ -153,9 +153,14 @@ def covid_gui():
     contactprovince_entry = Entry(covid_contact_tracing_app)
     contactprovince_entry.place(width=120, x=105, y=440)
     contactregion = Label(covid_contact_tracing_app, text = "Region : ")
-    contactregion.place(width=120, x=470, y=440)
+    contactregion.place(width=120, x=190, y=440)
     contactregion_entry = Entry(covid_contact_tracing_app)
-    contactregion_entry.place(width=120, x=585, y=440)
+    contactregion_entry.place(width=120, x=280, y=440)
+    #contact person relation
+    contactrelation = Label(covid_contact_tracing_app, text = "Relation to contact person : ")
+    contactrelation.place(x=430, y=440)
+    contactrelation_entry = Entry(covid_contact_tracing_app)
+    contactrelation_entry.place(width=120, x=585, y=440)
 #make database
 
 
