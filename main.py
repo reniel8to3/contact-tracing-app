@@ -117,7 +117,45 @@ def covid_gui():
     contactmiddlename.place(x=500, y=340)
     contactmiddlename_entry = Entry(covid_contact_tracing_app)
     contactmiddlename_entry.place(width =120, x=585, y=340)
-
+    #contacts's age
+    contactage = Label(covid_contact_tracing_app,text = "Age : ")
+    contactage.place(x=60, y=370)
+    contactage_entry = Entry(covid_contact_tracing_app)
+    contactage_entry.place(width=60, x=105, y=370)
+    #contact's gender
+    contactgender = Label(covid_contact_tracing_app,text = "Gender : ")
+    contactgender.place(x=290, y=370)
+    contactgender_entry = ttk.Combobox(
+    state="readonly",
+    values=["Male", "Female", "Other", "Prefer not to say"]
+)
+    contactgender_entry.place(width= 120, x=350, y=370)
+    #contact's number
+    contactnumber=Label(covid_contact_tracing_app, text = "Contact No. : ")
+    contactnumber.place(x=500, y=370)
+    contactnumber_entry = Entry(covid_contact_tracing_app)
+    contactnumber_entry.place(width=120, x=585, y=370)
+    #contacts's address
+    contactlot=Label(covid_contact_tracing_app, text = "House/Lot # : ")
+    contactlot.place(x=20, y=410)
+    contactlot_entry = Entry(covid_contact_tracing_app)
+    contactlot_entry.place(width=120, x=105, y=410)
+    contactbrgy=Label(covid_contact_tracing_app, text = "Baranggay : ")
+    contactbrgy.place(x=270, y=410)
+    contactbrgy_entry = Entry(covid_contact_tracing_app)
+    contactbrgy_entry.place(width=120, x=350, y=410)
+    contactcity=Label(covid_contact_tracing_app, text = "City/Town : ")
+    contactcity.place(x=500, y=410)
+    contactcity_entry = Entry(covid_contact_tracing_app)
+    contactcity_entry.place(width=120, x=585, y=410)
+    contactprovince=Label(covid_contact_tracing_app, text = "Province : ")
+    contactprovince.place(x=35, y=440)
+    contactprovince_entry = Entry(covid_contact_tracing_app)
+    contactprovince_entry.place(width=120, x=105, y=440)
+    contactregion = Label(covid_contact_tracing_app, text = "Region : ")
+    contactregion.place(width=120, x=470, y=440)
+    contactregion_entry = Entry(covid_contact_tracing_app)
+    contactregion_entry.place(width=120, x=585, y=440)
 #make database
 
 
