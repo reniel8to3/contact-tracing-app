@@ -161,10 +161,17 @@ def covid_gui():
     contactrelation.place(x=430, y=440)
     contactrelation_entry = Entry(covid_contact_tracing_app)
     contactrelation_entry.place(width=120, x=585, y=440)
-
+    #submit button
     submit_btn = Button(covid_contact_tracing_app, text="Submit", width="10")#extra function
-    submit_btn.place(x=300, y=500)
-
+    submit_btn.place(x=300, y=480)
+    #search button
+    search_field=Label(covid_contact_tracing_app,text='Search entries: ')
+    search_field.place(x=180, y=520)
+    search_field_entry=Entry(covid_contact_tracing_app)
+    search_field_entry.place(width=120, x=280, y=520)
+    #search button
+    search_field_bttn=Button(covid_contact_tracing_app, text = 'Search') #extra function missing
+    search_field_bttn.place(x=420, y=520)
 #make database
 
 
