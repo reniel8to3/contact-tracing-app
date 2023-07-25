@@ -161,6 +161,10 @@ def covid_gui():
     contactrelation.place(x=430, y=440)
     contactrelation_entry = Entry(covid_contact_tracing_app)
     contactrelation_entry.place(width=120, x=585, y=440)
+
+    submit_btn = Button(covid_contact_tracing_app, text="Submit", width="10")#extra function
+    submit_btn.place(x=300, y=500)
+
 #make database
 
 
