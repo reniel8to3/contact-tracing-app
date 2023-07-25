@@ -36,9 +36,12 @@ def covid_gui():
     userage_entry.place(width=60, x=105, y=145)
     #user's gender
     usergender = Label(covid_contact_tracing_app,text = "Gender : ")
-    usergender.place(x=275, y=145)
-    usergender_entry=Entry(covid_contact_tracing_app,text = "Gender :")
-    usergender_entry.place = ttk.Combobox(values=["Male", "Female", "Prefer not to say"])
+    usergender.place(x=290, y=145)
+    usergender_entry = ttk.Combobox(
+    state="readonly",
+    values=["Male", "Female", "Other", "Prefer not to say"]
+)
+    usergender_entry.place(width= 120, x=350, y=145)
     #user's contact
     usernumber=Label(covid_contact_tracing_app, text = "Contact No. : ")
     usernumber.place(x=500, y=145)
@@ -46,19 +49,22 @@ def covid_gui():
     usernumber_entry.place(width=120, x=585, y=145)
     #user's vaccination status
     uservacc=Label(covid_contact_tracing_app, text= 'Status :')
-    uservacc.place(x=50, y=175)
+    uservacc.place(x=50, y=180)
     radio=IntVar()
     uservac1 = Radiobutton(covid_contact_tracing_app, text="First Dose",variable=radio,value="1") 
-    uservac1.place(x=105, y=175)
+    uservac1.place(x=105, y=180)
     uservac2 = Radiobutton(covid_contact_tracing_app, text="Second Dose",variable=radio,value="2")
-    uservac2.place(x=205, y=175)
+    uservac2.place(x=205, y=180)
     uservac3 = Radiobutton(covid_contact_tracing_app, text="First Booster",variable=radio,value="3") 
-    uservac3.place(x=305, y=175)
+    uservac3.place(x=305, y=180)
     uservac4=Radiobutton(covid_contact_tracing_app, text ='Second Booster',variable=radio,value='4')
-    uservac4.place(x=405, y=175)
+    uservac4.place(x=405, y=180)
     uservac5=Radiobutton(covid_contact_tracing_app, text ='Not Yet Vaccinated',variable=radio,value='5')
-    uservac5.place(x=525, y=175)
-    
+    uservac5.place(x=525, y=180)
+    #user's vaccination brand
+    uservaccname=Label(covid_contact_tracing_app, text = 'Vaccine : ')
+    uservaccname.place(x=43, y=210)
+
 
 
 #make database
