@@ -39,10 +39,16 @@ def covid_gui():
     usergender.place(x=275, y=145)
     usergender_entry=Entry(covid_contact_tracing_app,text = "Gender :")
     usergender_entry.place = ttk.Combobox(values=["Male", "Female", "Prefer not to say"])
-    usernumber=Label(covid_contact_tracing_app, text = "Contact # : ")
+    #user's contact
+    usernumber=Label(covid_contact_tracing_app, text = "Contact No. : ")
     usernumber.place(x=500, y=145)
     usernumber_entry = Entry(covid_contact_tracing_app)
     usernumber_entry.place(width=120, x=585, y=145)
+    #user's vaccination status
+    uservacc=Label(covid_contact_tracing_app, text= 'Vaccination Status :')
+    uservacc.place(x=25, y=175)
+    
+
 #make database
 
 
