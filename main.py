@@ -4,7 +4,7 @@ from tkinter import ttk
 #create gui window
 covid_contact_tracing_app = Tk()
 covid_contact_tracing_app.title("COVID-19 CONTACT TRACING APP Version 1.0")
-covid_contact_tracing_app.geometry("720x720")
+covid_contact_tracing_app.geometry("720x560")
 #make gui for user input
 def covid_gui():
     gui_label=Label(covid_contact_tracing_app, text='COVID-19 CONTACT TRACING APP', font =( 'Arial', 15, 'bold'))
@@ -68,7 +68,6 @@ def covid_gui():
     userregion.place(width=120, x=470, y=215)
     userregion_entry = Entry(covid_contact_tracing_app)
     userregion_entry.place(width=120, x=585, y=215)
-    
     #user's vaccination status
     uservacc=Label(covid_contact_tracing_app, text= 'Status :')
     uservacc.place(x=50, y=245)
@@ -83,14 +82,22 @@ def covid_gui():
     uservac4.place(x=405, y=245)
     uservac5=Radiobutton(covid_contact_tracing_app, text ='Not Yet Vaccinated',variable=radio,value='5')
     uservac5.place(x=525, y=245)
-    #user's vaccination brand
-    uservaccname=Label(covid_contact_tracing_app, text = 'Vaccine : ')
-    uservaccname.place(x=43, y=280)
-    uservaccbrand=IntVar()
-    uservaccname1 = Radiobutton(covid_contact_tracing_app, text="Pfizer",variable=uservaccbrand,value="1") 
-    uservaccname1.place(x=105, y=280)
-    uservaccname2 = Radiobutton(covid_contact_tracing_app, text="Sinovac",variable=uservaccbrand,value="2") 
-    uservaccname2.place(x=205, y=280)
+    #user's symptoms
+    usersymptoms = Label(covid_contact_tracing_app,text = "Symptoms experienced  : ")
+    usersymptoms.place(x=20, y=280)
+    usersymptoms_entry = ttk.Combobox(
+    state="readonly",
+    values=["Cough", "Fever", "Chills", "Sore throat", "Diarrhea", "Headache", "Shortness of breath", "Loss of smell or taste", "Others", "None of the above"]
+)
+    usersymptoms_entry.place(width= 200, x=170, y=280)
+    #user's covid exposure
+    userexposure = Label(covid_contact_tracing_app,text = "Recent exposure  : ")
+    userexposure.place(x=400, y=280)
+    userexposure_entry = ttk.Combobox(
+    state="readonly",
+    values=["Yes", "No", "Uncertain"]
+)
+    userexposure_entry.place(width= 200, x=500, y=280)
     
 
 
