@@ -45,9 +45,21 @@ def covid_gui():
     usernumber_entry = Entry(covid_contact_tracing_app)
     usernumber_entry.place(width=120, x=585, y=145)
     #user's vaccination status
-    uservacc=Label(covid_contact_tracing_app, text= 'Vaccination Status :')
-    uservacc.place(x=25, y=175)
+    uservacc=Label(covid_contact_tracing_app, text= 'Status :')
+    uservacc.place(x=50, y=175)
+    radio=IntVar()
+    uservac1 = Radiobutton(covid_contact_tracing_app, text="First Dose",variable=radio,value="1") 
+    uservac1.place(x=105, y=175)
+    uservac2 = Radiobutton(covid_contact_tracing_app, text="Second Dose",variable=radio,value="2")
+    uservac2.place(x=205, y=175)
+    uservac3 = Radiobutton(covid_contact_tracing_app, text="First Booster",variable=radio,value="3") 
+    uservac3.place(x=305, y=175)
+    uservac4=Radiobutton(covid_contact_tracing_app, text ='Second Booster',variable=radio,value='4')
+    uservac4.place(x=405, y=175)
+    uservac5=Radiobutton(covid_contact_tracing_app, text ='Not Yet Vaccinated',variable=radio,value='5')
+    uservac5.place(x=525, y=175)
     
+
 
 #make database
 
