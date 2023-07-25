@@ -99,7 +99,24 @@ def covid_gui():
 )
     userexposure_entry.place(width= 200, x=500, y=280)
     
-
+    #banner
+    personalinfo=Label(covid_contact_tracing_app, text='Contact Person Details', font =( 'Arial', 10, 'bold', 'italic'))
+    personalinfo.place(x=10, y=310)
+    #contact's last name
+    contactlastname = Label(covid_contact_tracing_app,text = "Last Name : ")
+    contactlastname.place(x=25, y=340)
+    contactlastname_entry = Entry(covid_contact_tracing_app)
+    contactlastname_entry.place(width = 120, x=105, y=340)
+    #contact's first name
+    contactfirstname = Label(covid_contact_tracing_app,text = "First Name : ")
+    contactfirstname.place(x=275, y=340)
+    contactfirstname_entry = Entry(covid_contact_tracing_app)
+    contactfirstname_entry.place(width= 120, x=350, y=340)
+    #contact's middle name
+    contactmiddlename = Label(covid_contact_tracing_app,text = "Middle Name : ")
+    contactmiddlename.place(x=500, y=340)
+    contactmiddlename_entry = Entry(covid_contact_tracing_app)
+    contactmiddlename_entry.place(width =120, x=585, y=340)
 
 #make database
 
