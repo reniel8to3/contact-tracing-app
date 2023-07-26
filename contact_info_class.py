@@ -69,113 +69,107 @@ class user_contact_info:
         self.userprovince_entry = Entry(self.covid_contact_tracing_app)
         self.userprovince_entry.place(width=120, x=105, y=215)
         userregion = Label(self.covid_contact_tracing_app, text = "Region : ")
-        userregion.place(width=120, x=470, y=215)
+        userregion.place(width=120, x=250, y=215)
         self.userregion_entry = Entry(self.covid_contact_tracing_app)
-        self.userregion_entry.place(width=120, x=585, y=215)
+        self.userregion_entry.place(width=120, x=350, y=215)
         #user's vaccination status
         uservacc=Label(self.covid_contact_tracing_app, text= 'Status :')
-        uservacc.place(x=50, y=245)
-        radio=IntVar()
-        uservac1 = Radiobutton(self.covid_contact_tracing_app, text="First Dose",variable=radio,value="1") 
-        uservac1.place(x=105, y=245)
-        uservac2 = Radiobutton(self.covid_contact_tracing_app, text="Second Dose",variable=radio,value="2")
-        uservac2.place(x=205, y=245)
-        uservac3 = Radiobutton(self.covid_contact_tracing_app, text="First Booster",variable=radio,value="3") 
-        uservac3.place(x=305, y=245)
-        uservac4=Radiobutton(self.covid_contact_tracing_app, text ='Second Booster',variable=radio,value='4')
-        uservac4.place(x=405, y=245)
-        uservac5=Radiobutton(self.covid_contact_tracing_app, text ='Not Yet Vaccinated',variable=radio,value='5')
-        uservac5.place(x=525, y=245)
+        uservacc.place(x=515, y=215)
+        self.uservacc_entry = ttk.Combobox(
+        state="readonly",
+        values=["First Dose", "Second Dose", "First Booster", "Second Booster", "Not Yet Vaccinated"]
+        )
+        self.uservacc_entry.place(width= 120, x=585, y=215)
         #user's symptoms
         usersymptoms = Label(self.covid_contact_tracing_app,text = "Symptoms experienced  : ")
         usersymptoms.place(x=20, y=280)
-        usersymptoms_entry = ttk.Combobox(
+        self.usersymptoms_entry = ttk.Combobox(
         state="readonly",
         values=["Cough", "Fever", "Chills", "Sore throat", "Diarrhea", "Headache", "Shortness of breath", "Loss of smell or taste", "Others", "None of the above"]
         )
-        usersymptoms_entry.place(width= 200, x=170, y=280)
+        self.usersymptoms_entry.place(width= 200, x=170, y=280)
         #user's covid exposure
-        userexposure = Label(self.covid_contact_tracing_app,text = "Recent exposure  : ")
-        userexposure.place(x=400, y=280)
-        userexposure_entry = ttk.Combobox(
+        self.userexposure = Label(self.covid_contact_tracing_app,text = "Recent exposure  : ")
+        self.userexposure.place(x=400, y=280)
+        self.userexposure_entry = ttk.Combobox(
         state="readonly",
         values=["Yes", "No", "Uncertain"]
         )
-        userexposure_entry.place(width= 200, x=500, y=280)
+        self.userexposure_entry.place(width= 200, x=500, y=280)
 
         #banner
-        personalinfo=Label(self.covid_contact_tracing_app, text='Contact Person Details', font =( 'Arial', 10, 'bold', 'italic'))
-        personalinfo.place(x=10, y=310)
+        self.personalinfo=Label(self.covid_contact_tracing_app, text='Contact Person Details', font =( 'Arial', 10, 'bold', 'italic'))
+        self.personalinfo.place(x=10, y=310)
         #contact's last name
         contactlastname = Label(self.covid_contact_tracing_app,text = "Last Name : ")
         contactlastname.place(x=25, y=340)
-        contactlastname_entry = Entry(self.covid_contact_tracing_app)
-        contactlastname_entry.place(width = 120, x=105, y=340)
+        self.contactlastname_entry = Entry(self.covid_contact_tracing_app)
+        self.contactlastname_entry.place(width = 120, x=105, y=340)
         #contact's first name
         contactfirstname = Label(self.covid_contact_tracing_app,text = "First Name : ")
         contactfirstname.place(x=275, y=340)
-        contactfirstname_entry = Entry(self.covid_contact_tracing_app)
-        contactfirstname_entry.place(width= 120, x=350, y=340)
+        self.contactfirstname_entry = Entry(self.covid_contact_tracing_app)
+        self.contactfirstname_entry.place(width= 120, x=350, y=340)
         #contact's middle name
         contactmiddlename = Label(self.covid_contact_tracing_app,text = "Middle Name : ")
         contactmiddlename.place(x=500, y=340)
-        contactmiddlename_entry = Entry(self.covid_contact_tracing_app)
-        contactmiddlename_entry.place(width =120, x=585, y=340)
+        self.contactmiddlename_entry = Entry(self.covid_contact_tracing_app)
+        self.contactmiddlename_entry.place(width =120, x=585, y=340)
         #contacts's age
         contactage = Label(self.covid_contact_tracing_app,text = "Age : ")
         contactage.place(x=60, y=370)
-        contactage_entry = Entry(self.covid_contact_tracing_app)
-        contactage_entry.place(width=60, x=105, y=370)
+        self.contactage_entry = Entry(self.covid_contact_tracing_app)
+        self.contactage_entry.place(width=60, x=105, y=370)
         #contact's gender
         contactgender = Label(self.covid_contact_tracing_app,text = "Gender : ")
         contactgender.place(x=290, y=370)
-        contactgender_entry = ttk.Combobox(
+        self.contactgender_entry = ttk.Combobox(
         state="readonly",
         values=["Male", "Female", "Other", "Prefer not to say"]
         )
-        contactgender_entry.place(width= 120, x=350, y=370)
+        self.contactgender_entry.place(width= 120, x=350, y=370)
         #contact's number
         contactnumber=Label(self.covid_contact_tracing_app, text = "Contact No. : ")
         contactnumber.place(x=500, y=370)
-        contactnumber_entry = Entry(self.covid_contact_tracing_app)
-        contactnumber_entry.place(width=120, x=585, y=370)
+        self.contactnumber_entry = Entry(self.covid_contact_tracing_app)
+        self.contactnumber_entry.place(width=120, x=585, y=370)
         #contacts's address
         contactlot=Label(self.covid_contact_tracing_app, text = "House/Lot # : ")
         contactlot.place(x=20, y=410)
-        contactlot_entry = Entry(self.covid_contact_tracing_app)
-        contactlot_entry.place(width=120, x=105, y=410)
+        self.contactlot_entry = Entry(self.covid_contact_tracing_app)
+        self.contactlot_entry.place(width=120, x=105, y=410)
         contactbrgy=Label(self.covid_contact_tracing_app, text = "Baranggay : ")
         contactbrgy.place(x=270, y=410)
-        contactbrgy_entry = Entry(self.covid_contact_tracing_app)
-        contactbrgy_entry.place(width=120, x=350, y=410)
+        self.contactbrgy_entry = Entry(self.covid_contact_tracing_app)
+        self.contactbrgy_entry.place(width=120, x=350, y=410)
         contactcity=Label(self.covid_contact_tracing_app, text = "City/Town : ")
         contactcity.place(x=500, y=410)
-        contactcity_entry = Entry(self.covid_contact_tracing_app)
-        contactcity_entry.place(width=120, x=585, y=410)
+        self.contactcity_entry = Entry(self.covid_contact_tracing_app)
+        self.contactcity_entry.place(width=120, x=585, y=410)
         contactprovince=Label(self.covid_contact_tracing_app, text = "Province : ")
         contactprovince.place(x=35, y=440)
-        contactprovince_entry = Entry(self.covid_contact_tracing_app)
-        contactprovince_entry.place(width=120, x=105, y=440)
+        self.contactprovince_entry = Entry(self.covid_contact_tracing_app)
+        self.contactprovince_entry.place(width=120, x=105, y=440)
         contactregion = Label(self.covid_contact_tracing_app, text = "Region : ")
         contactregion.place(width=120, x=190, y=440)
-        contactregion_entry = Entry(self.covid_contact_tracing_app)
-        contactregion_entry.place(width=120, x=280, y=440)
+        self.contactregion_entry = Entry(self.covid_contact_tracing_app)
+        self.contactregion_entry.place(width=120, x=280, y=440)
         #contact person relation
         contactrelation = Label(self.covid_contact_tracing_app, text = "Relation to contact person : ")
         contactrelation.place(x=430, y=440)
-        contactrelation_entry = Entry(self.covid_contact_tracing_app)
-        contactrelation_entry.place(width=120, x=585, y=440)
+        self.contactrelation_entry = Entry(self.covid_contact_tracing_app)
+        self.contactrelation_entry.place(width=120, x=585, y=440)
         #submit button
-        submit_btn = Button(self.covid_contact_tracing_app, text="Submit", width="10")#extra function
-        submit_btn.place(x=300, y=480)
+        self.submit_btn = Button(self.covid_contact_tracing_app, text="Submit", width="10")#extra function
+        self.submit_btn.place(x=300, y=480)
         #search button
         search_field=Label(self.covid_contact_tracing_app,text='Search entries: ')
         search_field.place(x=180, y=520)
-        search_field_entry=Entry(self.covid_contact_tracing_app)
-        search_field_entry.place(width=120, x=280, y=520)
+        self.search_field_entry=Entry(self.covid_contact_tracing_app)
+        self.search_field_entry.place(width=120, x=280, y=520)
         #search button
-        search_field_bttn=Button(self.covid_contact_tracing_app, text = 'Search') #extra function missing
-        search_field_bttn.place(x=420, y=520)
+        self.search_field_bttn=Button(self.covid_contact_tracing_app, text = 'Search') #extra function missing
+        self.search_field_bttn.place(x=420, y=520)
 
     #def mainloop
     def mainloop(self):
