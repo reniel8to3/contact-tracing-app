@@ -125,20 +125,20 @@ values=["First Dose", "Second Dose", "First Booster", "Second Booster", "Not Yet
 uservacc_entry.place(width= 120, x=585, y=215)
 #user's symptoms
 usersymptoms = Label(covid_contact_tracing_app,text = "Symptoms experienced  : ")
-usersymptoms.place(x=20, y=280)
+usersymptoms.place(x=20, y=245)
 usersymptoms_entry = ttk.Combobox(
 state="readonly",
 values=["Cough", "Fever", "Chills", "Sore throat", "Diarrhea", "Headache", "Shortness of breath", "Loss of smell or taste", "Others", "None of the above"]
 )
-usersymptoms_entry.place(width= 200, x=170, y=280)
+usersymptoms_entry.place(width= 200, x=170, y=245)
 #user's covid exposure
 userexposure = Label(covid_contact_tracing_app,text = "Recent exposure  : ")
-userexposure.place(x=400, y=280)
+userexposure.place(x=400, y=245)
 userexposure_entry = ttk.Combobox(
 state="readonly",
 values=["Yes", "No", "Uncertain"]
 )
-userexposure_entry.place(width= 200, x=500, y=280)
+userexposure_entry.place(width= 200, x=500, y=245)
 
 #banner
 personalinfo=Label(covid_contact_tracing_app, text='Contact Person Details', font =( 'Arial', 10, 'bold', 'italic'))
