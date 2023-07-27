@@ -231,7 +231,7 @@ class search:
         if data_found:
             results = "\n".join(
                 [
-                    f"\n Name: {entry[0]} {entry[1]} {entry[2]}  \n Age: {entry[3]} \n Gender: {entry[4]} \n Contact No.: {entry[5]} \n Address: {entry[6]} {entry[7]} {entry[8]} {entry[9]} {entry[10]} \n Status: {entry[11]} \n Symptoms: {entry[12]} \n Recent exposure: {entry[13]}"
+                    f"\n Name: {entry[0]} {entry[1]} {entry[2]}  \n Age: {entry[3]} \n Gender: {entry[4]} \n Contact No.: {entry[5]} \n Address: {entry[6]} {entry[7]} {entry[8]} {entry[9]} {entry[10]} \n Status: {entry[11]} \n Symptoms: {entry[12]} \n Recent exposure: {entry[13]} \n Contact Person: {entry[14]} {entry[15]} {entry[16]} \n Contact Person Age: {entry[17]} \n Contact Person Gender: {entry[18]} \n Contact Person Number: {entry[19]} \n Contact Person Address: {entry[20]} {entry[21]} {entry[22]} {entry[23]} {entry[24]} \n Contact Person Relation: {entry[25]}"
                     for entry in data_found
                 ]
             )
