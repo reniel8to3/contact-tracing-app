@@ -1,3 +1,4 @@
 User Last Name,User First Name,User Middle Name,User Age,User Gender,User Contact Number,User Lot,User Barangay,User City,User Province,User Region,User Vaccination,User SymptomsUser Exposure,Contact Last Name,Contact First Name,Contact Middle Name,Contact Age,Contact Gender,Contact Number,Contact Lot,Contact Barangay,Contact City,Contact Province,Contact Region,Contact Relation
 Malabo,Reniel,Almario,18,Male,09090909,Lot 1,Barangay,City,Province,Region,First Booster,None of the above,No,Swift,Taylor,Allison,32,Female,09090901,Lot 1,Barangay,City,Province,Region,Family member
 Seok,Matthew,Woohyun,20,Male,0000000,01,143,Manila,Manila,Metro Manila,Second Booster,None of the above,No,Shen,Quanrui,Ricky,18,Male,010101010,01,143,Manila,Manila,Metro Manila,Family member
+Sung,Hanbin,SHB,20,Male,00000000,12,143,Manila,Manila,Metro Manila,Second Booster,None of the above,No,Zhang,Hao,ZH,21,Male,0101010101,12,143,Manila,Manila,Metro Manila,Family member
