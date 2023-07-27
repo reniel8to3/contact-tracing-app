@@ -1,16 +1,18 @@
 #create class for gui
 #import tkinter
+import tkinter
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
+import csv
 
 class user_contact_info:
     def __init__(self):
         #create gui window
         #make gui for user input
-        self.covid_contact_tracing_app = Tk()
+        self.covid_contact_tracing_app = tkinter.Tk()
         self.covid_contact_tracing_app.title("COVID-19 CONTACT TRACING APP Version 1.0")
-        self.covid_contact_tracing_app.geometry("720x560")
+        self.covid_contact_tracing_app.geometry("720x480")
         self.gui_label=Label(self.covid_contact_tracing_app, text='COVID-19 CONTACT TRACING APP', font =( 'Arial', 15, 'bold'))
         self.gui_label.pack(padx = 10, pady =10)
         self.gui_instruction=Label(self.covid_contact_tracing_app, text='Please fill up all the required details needed by contact tracing app.', font =( 'Arial', 10))
@@ -41,10 +43,7 @@ class user_contact_info:
         #user's gender
         usergender = Label(self.covid_contact_tracing_app,text = "Gender : ")
         usergender.place(x=290, y=145)
-        self.usergender_entry = ttk.Combobox(
-        state="readonly",
-        values=["Male", "Female", "Other", "Prefer not to say"]
-        )
+        self.usergender_entry = ttk.Combobox(values=["Male", "Female", "Other", "Prefer not to say"])
         self.usergender_entry.place(width= 120, x=350, y=145)
         #user's contact
         usernumber=Label(self.covid_contact_tracing_app, text = "Contact No. : ")
@@ -75,26 +74,17 @@ class user_contact_info:
         #user's vaccination status
         uservacc=Label(self.covid_contact_tracing_app, text= 'Status :')
         uservacc.place(x=515, y=215)
-        self.uservacc_entry = ttk.Combobox(
-        state="readonly",
-        values=["First Dose", "Second Dose", "First Booster", "Second Booster", "Not Yet Vaccinated"]
-        )
+        self.uservacc_entry = ttk.Combobox(values=["First Dose", "Second Dose", "First Booster", "Second Booster", "Not Yet Vaccinated"])
         self.uservacc_entry.place(width= 120, x=585, y=215)
         #user's symptoms
         usersymptoms = Label(self.covid_contact_tracing_app,text = "Symptoms experienced  : ")
         usersymptoms.place(x=20, y=245)
-        self.usersymptoms_entry = ttk.Combobox(
-        state="readonly",
-        values=["Cough", "Fever", "Chills", "Sore throat", "Diarrhea", "Headache", "Shortness of breath", "Loss of smell or taste", "Others", "None of the above"]
-        )
+        self.usersymptoms_entry = ttk.Combobox(values=["Cough", "Fever", "Chills", "Sore throat", "Diarrhea", "Headache", "Shortness of breath", "Loss of smell or taste", "Others", "None of the above"])
         self.usersymptoms_entry.place(width= 200, x=170, y=245)
         #user's covid exposure
         self.userexposure = Label(self.covid_contact_tracing_app,text = "Recent exposure  : ")
         self.userexposure.place(x=400, y=245)
-        self.userexposure_entry = ttk.Combobox(
-        state="readonly",
-        values=["Yes", "No", "Uncertain"]
-        )
+        self.userexposure_entry = ttk.Combobox(values=["Yes", "No", "Uncertain"])
         self.userexposure_entry.place(width= 200, x=500, y=245)
 
         #banner
@@ -117,22 +107,19 @@ class user_contact_info:
         self.contactmiddlename_entry.place(width =120, x=585, y=305)
         #contacts's age
         contactage = Label(self.covid_contact_tracing_app,text = "Age : ")
-        contactage.place(x=60, y=345)
+        contactage.place(x=60, y=340)
         self.contactage_entry = Entry(self.covid_contact_tracing_app)
-        self.contactage_entry.place(width=60, x=105, y=345)
+        self.contactage_entry.place(width=60, x=105, y=340)
         #contact's gender
         contactgender = Label(self.covid_contact_tracing_app,text = "Gender : ")
-        contactgender.place(x=290, y=345)
-        self.contactgender_entry = ttk.Combobox(
-        state="readonly",
-        values=["Male", "Female", "Other", "Prefer not to say"]
-        )
-        self.contactgender_entry.place(width= 120, x=350, y=345)
+        contactgender.place(x=290, y=340)
+        self.contactgender_entry = ttk.Combobox(values=["Male", "Female", "Other", "Prefer not to say"])
+        self.contactgender_entry.place(width= 120, x=350, y=340)
         #contact's number
         contactnumber=Label(self.covid_contact_tracing_app, text = "Contact No. : ")
-        contactnumber.place(x=500, y=345)
+        contactnumber.place(x=500, y=340)
         self.contactnumber_entry = Entry(self.covid_contact_tracing_app)
-        self.contactnumber_entry.place(width=120, x=585, y=345)
+        self.contactnumber_entry.place(width=120, x=585, y=340)
         #contacts's address
         contactlot=Label(self.covid_contact_tracing_app, text = "House/Lot # : ")
         contactlot.place(x=20, y=375)
@@ -160,16 +147,9 @@ class user_contact_info:
         self.contactrelation_entry = Entry(self.covid_contact_tracing_app)
         self.contactrelation_entry.place(width=120, x=585, y=405)
         #submit button
-        self.submit_btn = Button(self.covid_contact_tracing_app, text="Submit", width="10")#extra function
+        self.submit_btn = Button(self.covid_contact_tracing_app, text="Submit", width="10", command=self.submit_records)
         self.submit_btn.place(x=300, y=445)
-        #search button
-        search_field=Label(self.covid_contact_tracing_app,text='Search entries: ')
-        search_field.place(x=180, y=485)
-        self.search_field_entry=Entry(self.covid_contact_tracing_app)
-        self.search_field_entry.place(width=120, x=280, y=485)
-        #search button
-        self.search_field_bttn=Button(self.covid_contact_tracing_app, text = 'Search') #extra function missing
-        self.search_field_bttn.place(x=420, y=485)
+        
 
     #def mainloop
     def mainloop(self):
@@ -203,5 +183,83 @@ class user_contact_info:
         contact_province=self.contactprovince_entry.get()
         contact_region=self.contactregion_entry.get()
         contact_relation=self.contactrelation_entry.get()
-    
+    #create data labels for storage to file
+        label = ["User Last Name",
+                 "User First Name",
+                 "User Middle Name",
+                 "User Age",
+                 "User Gender",
+                 "User Contact Number",
+                 "User Lot",
+                 "User Barangay",
+                 "User City",
+                 "User Province",
+                 "User Region",
+                 "User Vaccination",
+                 "User Symptoms"
+                 "User Exposure",
+                 "Contact Last Name",
+                 "Contact First Name",
+                 "Contact Middle Name",
+                 "Contact Age",
+                 "Contact Gender",
+                 "Contact Number",
+                 "Contact Lot",
+                 "Contact Barangay",
+                 "Contact City",
+                 "Contact Province",
+                 "Contact Region",
+                 "Contact Relation"
+        ]
+        userdata = [user_last_name, 
+                    user_first_name,
+                    user_middle_name,
+                    user_age,
+                    user_gender,
+                    user_contact_number,
+                    user_lot,
+                    user_barangay,
+                    user_city,
+                    user_province,
+                    user_region,
+                    user_vaccination,
+                    user_symptoms,
+                    user_exposure,
+                    contact_last_name,
+                    contact_first_name,
+                    contact_middle_name,
+                    contact_age,
+                    contact_gender,
+                    contact_number,
+                    contact_lot,
+                    contact_barangay,
+                    contact_city,
+                    contact_province,
+                    contact_region,
+                    contact_relation
+        ]
+
+        #look for missing input
+        if not user_last_name or not user_first_name or not user_middle_name or not user_gender or not user_contact_number or not user_lot or not user_barangay or not user_city or not user_province or not user_region or not user_vaccination or not user_symptoms or not user_exposure or not contact_last_name or not contact_first_name or not contact_middle_name or not contact_age or not contact_gender or not contact_number or not contact_lot or not contact_barangay or not contact_city or not contact_province or not contact_region or not contact_relation:
+            messagebox.showinfo("COVID-19 Contact Tracing App", "Please fill in all fields.")
+            return
+
+        #data collection file
+        try:
+            with open("ContactInfo.csv", "r") as List:
+                read = csv.reader(List)
+                if any(read):
+                    file_checker = True
+        except FileNotFoundError:
+            pass
+
+        with open("ContactInfo.csv", "a", newline="") as List:
+            write = csv.writer(List)
+            if not file_checker:
+                write.writerow(label)  
+            write.writerow(userdata)  
+
+        #thank you message
+        messagebox.showinfo("COVID-19 Contact Tracing App", "Thank you for answering this COVID-19 Contact Tracing App.")
+        self.covid_contact_tracing_app.destroy()
 
