@@ -1,8 +1,7 @@
 #import modules
 import tkinter
 from tkinter import *
-from tkinter import ttk
-from tkinter import messagebox
+
 
 #import class
 from contact_info_class import user_contact_info
