@@ -236,6 +236,6 @@ class search:
                 ]
             )
     # Message box   
-            messagebox.showinfo("SEARCH RESULT: ", f"Record found:\n\n{results}")
+            messagebox.showinfo("SEARCH RESULT: ", f"Record found:\n{results}")
         else:
             messagebox.showinfo("SEARCH RESULT: ", "No Data Entries Found")
