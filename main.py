@@ -18,6 +18,10 @@ class main:
         #register button
         register_button = Button(self.main, text="Register", font = (30), command=self.contact_info)
         register_button.place(width=100, height=50, x=200, y=120)
+        #search button
+        search_button = Button(self.main, text="Search", font = (30) )#missing command
+        search_button.place(width=100, height=50, x=200, y=200)
+                
     def contact_info(self):
         open=user_contact_info()
         open.run()

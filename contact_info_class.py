@@ -43,7 +43,7 @@ class user_contact_info:
         #user's gender
         usergender = Label(self.covid_contact_tracing_app,text = "Gender : ")
         usergender.place(x=290, y=145)
-        self.usergender_entry = ttk.Combobox(values=["Male", "Female", "Other", "Prefer not to say"])
+        self.usergender_entry = ttk.Combobox(self.covid_contact_tracing_app, values=["Male", "Female", "Other", "Prefer not to say"])
         self.usergender_entry.place(width= 120, x=350, y=145)
         #user's contact
         usernumber=Label(self.covid_contact_tracing_app, text = "Contact No. : ")
@@ -74,17 +74,17 @@ class user_contact_info:
         #user's vaccination status
         uservacc=Label(self.covid_contact_tracing_app, text= 'Status :')
         uservacc.place(x=515, y=215)
-        self.uservacc_entry = ttk.Combobox(values=["First Dose", "Second Dose", "First Booster", "Second Booster", "Not Yet Vaccinated"])
+        self.uservacc_entry = ttk.Combobox(self.covid_contact_tracing_app, values=["First Dose", "Second Dose", "First Booster", "Second Booster", "Not Yet Vaccinated"])
         self.uservacc_entry.place(width= 120, x=585, y=215)
         #user's symptoms
         usersymptoms = Label(self.covid_contact_tracing_app,text = "Symptoms experienced  : ")
         usersymptoms.place(x=20, y=245)
-        self.usersymptoms_entry = ttk.Combobox(values=["Cough", "Fever", "Chills", "Sore throat", "Diarrhea", "Headache", "Shortness of breath", "Loss of smell or taste", "Others", "None of the above"])
+        self.usersymptoms_entry = ttk.Combobox(self.covid_contact_tracing_app, values=["Cough", "Fever", "Chills", "Sore throat", "Diarrhea", "Headache", "Shortness of breath", "Loss of smell or taste", "Others", "None of the above"])
         self.usersymptoms_entry.place(width= 200, x=170, y=245)
         #user's covid exposure
         self.userexposure = Label(self.covid_contact_tracing_app,text = "Recent exposure  : ")
         self.userexposure.place(x=400, y=245)
-        self.userexposure_entry = ttk.Combobox(values=["Yes", "No", "Uncertain"])
+        self.userexposure_entry = ttk.Combobox(self.covid_contact_tracing_app, values=["Yes", "No", "Uncertain"])
         self.userexposure_entry.place(width= 200, x=500, y=245)
 
         #banner
@@ -113,7 +113,7 @@ class user_contact_info:
         #contact's gender
         contactgender = Label(self.covid_contact_tracing_app,text = "Gender : ")
         contactgender.place(x=290, y=340)
-        self.contactgender_entry = ttk.Combobox(values=["Male", "Female", "Other", "Prefer not to say"])
+        self.contactgender_entry = ttk.Combobox(self.covid_contact_tracing_app, values=["Male", "Female", "Other", "Prefer not to say"])
         self.contactgender_entry.place(width= 120, x=350, y=340)
         #contact's number
         contactnumber=Label(self.covid_contact_tracing_app, text = "Contact No. : ")
@@ -245,17 +245,17 @@ class user_contact_info:
             return
 
         #data collection file
+        filecheck=False
         try:
             with open("ContactInfo.csv", "r") as List:
                 read = csv.reader(List)
                 if any(read):
-                    file_checker = True
+                    filecheck = True
         except FileNotFoundError:
             pass
-
         with open("ContactInfo.csv", "a", newline="") as List:
             write = csv.writer(List)
-            if not file_checker:
+            if not filecheck:
                 write.writerow(label)  
             write.writerow(userdata)  
 
