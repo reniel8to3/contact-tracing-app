@@ -2,7 +2,6 @@
 import tkinter
 from tkinter import *
 
-
 #import class
 from contact_info_class import user_contact_info
 from search_class import search
